@@ -1,0 +1,25 @@
+<h1>Edit system</h1>
+
+<%= form_with model: @sys_info do |form| %>
+  <div>
+    <%= form.label :name, "Server name" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :rack %>
+    <%= form.text_field :rack %>
+  </div>
+
+  <div>
+    <%= form.label :u_position, "U Position" %>
+    <%= form.number_field :u_position %>
+  </div>
+
+  <div>
+    <%= form.label :slot %>
+    <%= form.text_field :slot %>
+  </div>
+
+  <%= form.submit "Update system" %>
+<% end %>

@@ -1,0 +1,31 @@
+<h1>New System Information</h1>
+
+<%= form_with url: sys_infos_path, multipart: true do |form| %>
+  <div>
+    <%= label_tag :name, "Server name" %>
+    <%= text_field_tag :name %>
+  </div>
+  
+  <div>
+    <%= form.label :rack, "Rack"%>
+    <%= form.text_field :rack%>
+  </div>
+
+  <div>
+    <%= form.label :u_position, "U Position"%>
+    <%= form.text_field :u_position%>
+  </div>
+
+  <div>
+    <%= form.label :slot%>
+    <%= form.text_field :slot%>
+  </div>
+
+  <div>
+    <%= file_field_tag :data, accept: ".json" %>
+  </div>
+
+  <div>
+    <%= submit_tag "Upload JSON" %>
+  </div>
+<% end %>

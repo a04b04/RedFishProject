@@ -1,0 +1,13 @@
+<h1>System Information</h1>
+
+<% @sys_infos.each do |sys_info| %>
+  <p>
+    <%= link_to sys_info.name, sys_info_path(sys_info) %>
+  </p>
+<% end %>
+
+  <p>
+    <%= link_to "Add another server",
+    new_sys_info_path,
+    class: "text-blue-600 hover:underline" %>
+  </p>
