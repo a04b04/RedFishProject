@@ -1,25 +1,56 @@
-<h1>Edit system</h1>
+<div class="max-w-xl mx-auto mt-10 px-4">
+  <h1 class="text-3xl font-bold mb-6 text-center">
+    Edit system
+  </h1>
+<div class="border border-gray-300 rounded-lg p-6 bg-white shadow-sm">
+    <%= form_with model: @sys_info do |form| %>
+      <div class="mb-4">
+        <%= form.label :name,
+            "Server name",
+            class: "block font-medium mb-1" %>
 
-<%= form_with model: @sys_info do |form| %>
-  <div>
-    <%= form.label :name, "Server name" %>
-    <%= form.text_field :name %>
+        <%= form.text_field :name,
+            class: "w-full border border-gray-300 rounded px-3 py-2" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :rack,
+            "Rack",
+            class: "block font-medium mb-1" %>
+
+        <%= form.text_field :rack,
+            class: "w-full border border-gray-300 rounded px-3 py-2" %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :u_position,
+            "U Position",
+            class: "block font-medium mb-1" %>
+
+        <%= form.number_field :u_position,
+            class: "w-full border border-gray-300 rounded px-3 py-2" %>
+      </div>
+
+      <div class="mb-6">
+        <%= form.label :slot,
+            "Slot",
+            class: "block font-medium mb-1" %>
+
+        <%= form.text_field :slot,
+            class: "w-full border border-gray-300 rounded px-3 py-2" %>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <%= form.submit "Update system",
+            class: "px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer" %>
+
+        <%= link_to "Cancel",
+            sys_info_path(@sys_info),
+            class: "text-blue-600 hover:underline" %>
+      </div>
+    <% end %>
   </div>
 
-  <div>
-    <%= form.label :rack %>
-    <%= form.text_field :rack %>
-  </div>
+</div>
 
-  <div>
-    <%= form.label :u_position, "U Position" %>
-    <%= form.number_field :u_position %>
-  </div>
-
-  <div>
-    <%= form.label :slot %>
-    <%= form.text_field :slot %>
-  </div>
-
-  <%= form.submit "Update system" %>
-<% end %>
+  
