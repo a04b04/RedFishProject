@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :sys_infos, only: %i[show create update]
+    resources :sys_infos, only: %i[show create update destroy]
   end
 end

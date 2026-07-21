@@ -53,6 +53,12 @@ class Api::SysInfosController < ApplicationController
     end
   end
 
+  def destroy
+    @sys_info = SysInfo.find(params[:id])
+    @sys_info.destroy
+    head :no_content
+  end
+
   private
 
   def sys_info_params
