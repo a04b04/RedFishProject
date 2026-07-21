@@ -41,6 +41,7 @@ class SysInfosController < ApplicationController
       u_position: params[:u_position],
       rack: params[:rack],
       slot: params[:slot],
+      notes: params[:notes],
       system_model: json_data["Model"],
       max_memory: json_data["MemorySummary"]["TotalSystemMemoryGiB"]
     )
@@ -96,6 +97,6 @@ class SysInfosController < ApplicationController
   end
 
   def sys_info_params
-    params.expect(sys_info: [:name, :rack, :u_position, :slot])
+    params.expect(sys_info: [:name, :rack, :u_position, :slot, :notes])
   end
 end
