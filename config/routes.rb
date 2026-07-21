@@ -7,4 +7,8 @@ Rails.application.routes.draw do
       post :upload_import
     end
   end
+
+  namespace :api do
+    resources :sys_infos, only: %i[show create update destroy]
+  end
 end
